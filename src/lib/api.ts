@@ -4,7 +4,7 @@ import axios from "axios";
 export async function getAiResponse(message: string): Promise<CleanResponse> {
   try {
     const response = await axios.post<CleanResponse>(
-      `https://multi-ai-agent-customer-support-api.onrender.com/api/v1/query`,
+      "https://cognitive-web-support-backend.onrender.com",
       {
         query: message,
       }
