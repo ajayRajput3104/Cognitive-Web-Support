@@ -1,0 +1,22 @@
+import { CleanResponse } from "@/types/schemas";
+import axios from "axios";
+
+export async function getAiResponse(message: string): Promise<CleanResponse> {
+  try {
+    const response = await axios.post<CleanResponse>(
+      `https://multi-ai-agent-customer-support-api.onrender.com/api/v1/query`,
+      {
+        query: message,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching or parsing AI Response", error);
+    if (axios.isAxiosError(error) && error.response) {
+      const apiErrorMessage =
+        error.response.data?.message || "An unknown API Error occurred";
+      throw new Error(apiErrorMessage);
+    }
+    throw error;
+  }
+}
