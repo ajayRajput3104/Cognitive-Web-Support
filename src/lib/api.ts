@@ -1,12 +1,19 @@
 import { CleanResponse } from "@/types/schemas";
 import axios from "axios";
 
+const API_URL = process.env.NEXT_PUBLIC_AI_API_URL;
 export async function getAiResponse(message: string): Promise<CleanResponse> {
   try {
     const response = await axios.post<CleanResponse>(
-      "https://cognitive-web-support-backend.onrender.com",
+      `${API_URL}/api/query`,
       {
         query: message,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": process.env.NEXT_PUBLIC_API_KEY || "",
+        },
       }
     );
     return response.data;
