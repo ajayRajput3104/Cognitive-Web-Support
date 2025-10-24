@@ -58,10 +58,7 @@ export default function MessageBubble({
               : "bg-card text-card-foreground border border-white/20"
           )}
         >
-          <div
-            className="message-content prose prose-invert max-w-none break-words"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
+          <p className="whitespace-pre-wrap message-content">{content}</p>
           {/* Analu=ysis Badge for Assistant
           {!isUser && analysis && (
             <div className="flex gap-2 mt-2">
