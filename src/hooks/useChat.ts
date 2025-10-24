@@ -17,7 +17,7 @@ export const useChat = () => {
 
   useEffect(() => {
     try {
-      // CHANGE: Load messages from sessionStorage on initial load.
+      //Load messages from sessionStorage on initial load.
       const savedMessages = sessionStorage.getItem(SESSION_STORAGE_KEY);
       const parsedMessages: Message[] = savedMessages
         ? JSON.parse(savedMessages)
@@ -79,7 +79,7 @@ export const useChat = () => {
         toast.error("An unknown error occurred.");
       }
 
-      // Update the message status in state
+      // Update the message status to "error"
       setMessages((prev) =>
         prev.map(
           (m): Message =>

@@ -70,9 +70,11 @@ export default function MessageBubble({
         {/*Action Buttons */}
         {isUser && (
           <div className="flex items-center gap-1">
-            <span className="text-xs text-muted-foreground">
-              Failed to send.
-            </span>
+            {status == "error" && (
+              <span className="text-xs text-muted-foreground">
+                Failed to send.
+              </span>
+            )}
             <Button
               variant="ghost"
               size="icon"

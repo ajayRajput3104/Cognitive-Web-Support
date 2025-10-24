@@ -2,10 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { Message } from "@/types/chat";
-// CHANGE: Corrected the import path to use the reliable alias.
 import MessageBubble from "../MessageBubble";
 import { ScrollArea } from "@/components/ui/scroll-area";
-// CHANGE: Corrected the import path for the Loader component.
 import Loader from "@/components/Loader";
 
 interface ChatBoxProps {
