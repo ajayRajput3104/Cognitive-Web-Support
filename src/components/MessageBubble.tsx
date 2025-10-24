@@ -58,7 +58,7 @@ export default function MessageBubble({
               : "bg-card text-card-foreground border border-white/20"
           )}
         >
-          <p className="whitespace-pre-wrap">{content}</p>
+          <p className="whitespace-pre-wrap message-content">{content}</p>
           {/* Analu=ysis Badge for Assistant
           {!isUser && analysis && (
             <div className="flex gap-2 mt-2">
