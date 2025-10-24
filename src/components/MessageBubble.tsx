@@ -55,7 +55,7 @@ export default function MessageBubble({
             "max-w-2xl p-3 rounded-lg shadow-sm",
             isUser
               ? "bg-primary text-primary-foreground"
-              : "bg-card text-card-foreground"
+              : "bg-card text-card-foreground border border-white/20"
           )}
         >
           <p className="whitespace-pre-wrap">{content}</p>
